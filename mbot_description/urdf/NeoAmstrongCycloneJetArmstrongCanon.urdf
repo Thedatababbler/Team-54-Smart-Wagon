@@ -1,0 +1,134 @@
+<?xml version="1.0" ?>
+<robot name="NeoAmstrongCycloneJetArmstrongCanon">
+
+    <link name="base_link">
+        <visual>
+            <origin xyz=" 0 0 0.45" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="0.8" radius="0.20"/>
+            </geometry>
+            <material name="pink">
+                <color rgba="255 0 0 1"/>
+            </material>
+        </visual>
+    </link>
+
+	<joint name="canon_stem_joint" type="continuous">
+        <origin xyz="0.19 0.0 0.20" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="canon_stem_link"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="canon_stem_link">
+        <visual>
+            <origin xyz=" 0.15 0 0" rpy="0 1.5 0" />
+            <geometry>
+                <cylinder length="0.3" radius="0.05"/>
+            </geometry>
+            <material name="white">
+                <color rgba="1 1 1 0.9"/>
+            </material>
+        </visual>
+    </link>
+
+
+	<joint name="left_canon_ball_joint" type="fixed">
+        <origin xyz="0.210 0.13 0.20" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="left_canon_ball_link"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+	<joint name="right_canon_ball_joint" type="fixed">
+        <origin xyz="0.210 -0.13 0.20" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="right_canon_ball_link"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="left_canon_ball_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <sphere radius="0.05" />
+            </geometry>
+            <material name="white">
+                <color rgba="1 1 1 0.9"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="right_canon_ball_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <sphere radius="0.05" />
+            </geometry>
+            <material name="white">
+                <color rgba="1 1 1 0.9"/>
+            </material>
+        </visual>
+    </link>
+
+	<joint name="head_joint" type="continuous">
+        <origin xyz="0 0 0.8" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="head_link"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="head_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius="0.2" />
+            </geometry>
+            <material name="light_pink">
+                <color rgba="255 0 255 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="left_wheel_joint" type="continuous">
+        <origin xyz="0 0.35 0.15" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="left_wheel_link"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="left_wheel_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <sphere radius="0.16" />
+            </geometry>
+            <material name="white">
+                <color rgba="1 1 1 0.9"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="right_wheel_joint" type="continuous">
+        <origin xyz="0 -0.35 0.15" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="right_wheel_link"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <link name="right_wheel_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5707 0 0" />
+            <geometry>
+                <sphere radius="0.16"/>
+            </geometry>
+            <material name="white">
+                <color rgba="1 1 1 0.9"/>
+            </material>
+        </visual>
+    </link>
+
+
+</robot>
+
+
